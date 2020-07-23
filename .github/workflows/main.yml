@@ -25,6 +25,9 @@ jobs:
           tf_actions_subcommand: "init"
           tf_actions_working_dir: "example/examplea"
       - name: "Terraform Validate"
+        env:
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.28
