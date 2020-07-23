@@ -26,6 +26,7 @@ jobs:
           tf_actions_working_dir: "example/examplea"
       - name: "Terraform Validate"
         env:
+          BITBUCKET_USERNAME: ${{ secrets.BITBUCKET_USERNAME }}
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
         uses: hashicorp/terraform-github-actions@master
